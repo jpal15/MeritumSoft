@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MeritumSoft</string>
+    <string name="plantel">Plantel</string>
+    <string name="peso">PESO</string>
+    <string name="altura">ALTURA</string>
+    <string name="nacionalidad">NACIONALIDAD</string>
+    <string name="fecha_de_nacimiento">FECHA DE NACIMIENTO</string>
 </resources>
