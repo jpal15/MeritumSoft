@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context=".PlayersActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".PlayersActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_layout"
@@ -17,50 +17,54 @@
             android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow_back_icon"
-            app:tint="#FFF"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="15dp"/>
+            android:src="@drawable/arrow_back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#FFF" />
+
         <TextView
             android:id="@+id/points_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1520"
-            android:fontFamily="@font/roboto"
-            android:textSize="12sp"
-            android:textColor="#FFF"
-            android:layout_marginEnd="4dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/roboto"
+            android:text="1520"
+            android:textColor="#FFF"
+            android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@id/points_icon"
             app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/points_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="14dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/points_icon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/profile_image"/>
+            app:layout_constraintRight_toLeftOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="32"
-            android:fontFamily="@font/roboto"
-            android:textSize="12sp"
-            android:textColor="#FFF"
             android:layout_marginEnd="4dp"
+            android:fontFamily="@font/roboto"
+            android:text="32"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/coin_icon"
-            app:layout_constraintTop_toBottomOf="@id/points_value"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/points_value" />
+
         <ImageView
             android:id="@+id/coin_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/coin_icon"
             app:layout_constraintEnd_toStartOf="@+id/profile_image"
             app:layout_constraintTop_toBottomOf="@id/points_icon" />
@@ -70,10 +74,10 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="end"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="8dp"
-            android:scaleType="fitStart"
+            android:layout_marginEnd="10dp"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -90,29 +94,32 @@
             android:id="@+id/tv_plantel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
             android:gravity="center"
             android:text="@string/plantel"
-            android:fontFamily="@font/roboto"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:textColor="#FFF"
-            />
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_players"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:orientation="horizontal"/>
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" />
 
     <ScrollView
+        android:id="@+id/sv_players_data"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="340dp"
@@ -137,32 +144,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginTop="-30dp"
-                android:translationZ="2dp"
-                android:background="@drawable/round_border">
+                android:background="@drawable/round_border"
+                android:gravity="center"
+                android:translationZ="2dp">
 
                 <TextView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:text="No."
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#1B1E2F"
-                    android:fontFamily="@font/roboto"
                     android:layout_marginTop="4dp"
-                    android:gravity="center|top"/>
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center|top"
+                    android:text="No."
+                    android:textColor="#1B1E2F"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tv_player_position"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
                     android:gravity="center"
                     android:textColor="#CE1212"
-                    android:fontFamily="@font/roboto"
-                    android:layout_marginTop="5dp"
                     android:textSize="40sp"
                     android:textStyle="bold"
-                    android:text="13"/>
+                    tools:text="13" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -187,10 +195,10 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="60dp"
                         android:fontFamily="@font/roboto"
-                        android:text="Adolfo Alejandro"
                         android:textColor="#1B1E2F"
                         android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Adolfo Alejandro" />
 
                     <TextView
                         android:id="@+id/tv_player_lastname"
@@ -199,16 +207,16 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="90dp"
                         android:fontFamily="@font/roboto"
-                        android:text="MUÑOZ CERVANTES"
                         android:textColor="#CE1212"
                         android:textSize="30sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="MUÑOZ CERVANTES" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="74dp"
                         android:layout_marginStart="12dp"
-                        android:layout_marginTop="130dp"
+                        android:layout_marginTop="140dp"
                         android:layout_marginEnd="12dp"
                         android:background="#48CFCFCF">
 
@@ -242,14 +250,13 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto"
-                            android:text="57"
                             android:textColor="#1B1E2F"
                             android:textSize="20sp"
                             android:textStyle="bold"
-
                             app:layout_constraintEnd_toStartOf="@id/line"
                             app:layout_constraintStart_toEndOf="@id/iv_weight"
-                            app:layout_constraintTop_toBottomOf="@id/tv_peso" />
+                            app:layout_constraintTop_toBottomOf="@id/tv_peso"
+                            tools:text="57" />
 
                         <ImageView
                             android:id="@+id/line"
@@ -290,12 +297,12 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="20dp"
                             android:fontFamily="@font/roboto"
-                            android:text="1,66"
                             android:textColor="#1B1E2F"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@id/iv_height"
-                            app:layout_constraintTop_toBottomOf="@id/tv_altura" />
+                            app:layout_constraintTop_toBottomOf="@id/tv_altura"
+                            tools:text="1,66" />
 
                         <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/guideline"
@@ -305,82 +312,89 @@
                             app:layout_constraintGuide_percent="0.5" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="200dp"
-                    android:translationZ="10dp"
-                    android:orientation="horizontal"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="200dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="30dp">
-                        <ImageView
-                            android:id="@+id/iv_nacional"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/nacionalidad"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"/>
-                        <TextView
-                            android:id="@+id/tv_nacional"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/nacionalidad"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="@font/roboto"
-                            android:textColor="#1B1E2F"
-                            app:layout_constraintStart_toEndOf="@id/iv_nacional"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"/>
-                        <TextView
-                            android:id="@+id/tv_date_of_birth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ecuatoriano"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/roboto"
-                            android:textColor="#1B1E2F"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"/>
+                    android:layout_marginBottom="30dp"
+                    android:orientation="horizontal"
+                    android:translationZ="10dp">
 
                     <ImageView
-                        android:id="@+id/iv_date"
+                        android:id="@+id/iv_nacional"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_calendar"
-                        android:layout_marginTop="10dp"
+                        android:src="@drawable/nacionalidad"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/iv_nacional"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
-                        android:id="@+id/tv_date"
+                        android:id="@+id/tv_nacional"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_de_nacimiento"
                         android:layout_marginStart="10dp"
                         android:fontFamily="@font/roboto"
+                        android:text="@string/nacionalidad"
                         android:textColor="#1B1E2F"
-                        android:layout_marginTop="10dp"
-                        app:layout_constraintStart_toEndOf="@id/iv_date"
-                        app:layout_constraintTop_toBottomOf="@id/tv_nacional"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_nacional"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
+                        android:id="@+id/tv_nacionalidad_data"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12/12/1997"
                         android:layout_marginStart="5dp"
                         android:fontFamily="@font/roboto"
                         android:textColor="#1B1E2F"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:layout_marginTop="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_date_of_birth"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Ecuatoriano" />
+
+                    <ImageView
+                        android:id="@+id/iv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_calendar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_nacional" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/fecha_de_nacimiento"
+                        android:textColor="#1B1E2F"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_date"
+                        app:layout_constraintTop_toBottomOf="@id/tv_nacional" />
+
+                    <TextView
+                        android:id="@+id/tv_date_of_birth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="#1B1E2F"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_nacionalidad_data"
+                        tools:text="12/12/1997" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </RelativeLayout>

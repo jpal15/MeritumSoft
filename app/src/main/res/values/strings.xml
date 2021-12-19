@@ -5,4 +5,18 @@
     <string name="altura">ALTURA</string>
     <string name="nacionalidad">NACIONALIDAD</string>
     <string name="fecha_de_nacimiento">FECHA DE NACIMIENTO</string>
+    <string name="liga_mx_women_clausura">Liga MX, Women, Clausura</string>
+    <string name="ldu">LDU</string>
+    <string name="nec">NEC</string>
+    <string name="stadium_checkin">STADIUM CHECKIN</string>
+    <string name="win_points_and_coins">Win points and coins</string>
+    <string name="lineup_create">LINEUP CREATE</string>
+    <string name="liga_deportiva_universitaria">LIGA DEPORTIVA UNIVERSITARIA</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="or_sign_in_with">or sign in with</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="please_wait">Please Wait...</string>
 </resources>
